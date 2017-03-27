@@ -19,11 +19,11 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Function Point API! You can use our Application Program Inteface to access Function Point API endpoints; those can get information on various items from our database.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell, Ruby, and Python! To your right hand side you can view code snippets to assist you in using our API, use the upper tabs list to cycle between a couple different languages.
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to use it as a base for your own API's documentation as well.
 
 # Authentication
 
@@ -84,8 +84,11 @@ api.kittens.get()
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl -u cm-user: -X POST https://apidocs.functionpoint.com/v1.1/oauth2/token 
+  -d "grant_type=password" 
+  -d "username=sales master base/emma lauder" 
+  -d "password=PASSWORD_GOES_HERE" 
+  -d "scope=basic"
 ```
 
 ```javascript
