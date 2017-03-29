@@ -1170,6 +1170,9 @@ This endpoint retrieves the specified Task.
 `GET https://api.functionpoint.com/v1.1/tasks/`
 
 ### Query Parameters
+
+<div class="table">
+
 Parameter | Type | Description
 --------- | ------- | -----------
     ID  |     | 
@@ -1235,6 +1238,8 @@ Parameter | Type | Description
     task_type  |     |  
     base_type  |     |  
     assignees  |     |
+  
+  </div>
 
 
 
