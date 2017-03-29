@@ -200,7 +200,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,6 +211,7 @@
       <img src="images/logo.png" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -345,8 +346,8 @@ With access to the API you will be able to:</p>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -413,7 +414,7 @@ With access to the API you will be able to:</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET hhttps://api.functionpoint.com/v1.1/companies/[A_CONTACT_ID]</code></p>
+<p><code class="prettyprint">GET hhttps://api.functionpoint.com/v1.1/companies/[A_COMPANY_ID]</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -480,7 +481,7 @@ curl https://api.functionpoint.com/v1.1/contacts
       </span><span class="s2">"cell_phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"direct_phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"phone_extension"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">noone+</span><span class="mi">915</span><span class="err">@functionpoint.com</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"noone+915@functionpoint.com"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"mailing_list"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"birthdate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
@@ -494,6 +495,7 @@ curl https://api.functionpoint.com/v1.1/contacts
       </span><span class="s2">"role_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"is_staff"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"916"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample"</span><span class="p">,</span><span class="w">
@@ -534,8 +536,8 @@ curl https://api.functionpoint.com/v1.1/contacts
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -593,7 +595,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
   </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">201</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves the specified _______.</p>
+<p>This endpoint retrieves the specified contact.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -603,8 +605,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -772,8 +774,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -796,7 +798,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/_______s
+<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/jobs
   -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
 </code></pre>
 <blockquote>
@@ -860,7 +862,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all _______s.</p>
+<p>This endpoint retrieves all jobs.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -870,8 +872,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -899,28 +901,24 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-            </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"268"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordination"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"272"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copywriting</span><span class="se">\/</span><span class="s2">Editing"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"more"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="s2">"jobs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In-House"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30189"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Job Overdue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status_alias_of"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_my_job"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Function Point Productivity Software"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_seconds_worked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves the specified _______.</p>
+<p>This endpoint retrieves the specified job.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -930,8 +928,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -949,57 +947,12 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <h1 id="offices">Offices</h1>
 
-<h2 id="find-all-offices">Find All Offices</h2>
-
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/_______s
-  -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"these"</span><span class="p">:[</span><span class="w">
-  </span><span class="p">{</span><span class="s2">"this"</span><span class="p">:</span><span class="s2">"that"</span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="s2">"this"</span><span class="p">:</span><span class="s2">"that"</span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all _______s.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
 <h2 id="find-an-office-by-id">Find an Office by ID</h2>
 
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/_______/________ID 
+<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/offices/2 
   -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1019,8 +972,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1066,8 +1019,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1088,7 +1041,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/_______/________ID 
+<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/phase_services/3 
   -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1098,7 +1051,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
   </span><span class="s2">"this"</span><span class="p">:</span><span class="s2">"that"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves the specified _______.</p>
+<p>This endpoint retrieves the specified phase.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1108,8 +1061,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1132,7 +1085,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/_______s
+<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/tags
   -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1145,7 +1098,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all _______s.</p>
+<p>This endpoint retrieves all Tags.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1155,50 +1108,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<h2 id="find-a-tag-by-id">Find a Tag by ID</h2>
-
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/_______/________ID 
-  -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"this"</span><span class="p">:</span><span class="s2">"that"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves the specified _______.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Field</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -1221,6 +1132,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
 </blockquote>
+
+<p>By default, hitting this endpoint without specifying fields will return only the objects&rsquo; ID numbers.</p>
 <pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/tasks
   -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
 </code></pre>
@@ -1228,70 +1141,240 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"jobs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In-House"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30189"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Job Overdue"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status_alias_of"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"is_my_job"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Function Point Productivity Software"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total_seconds_worked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pro Shop Brochure"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30264"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status_alias_of"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"is_my_job"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Furry Creek Golf Academy"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total_seconds_worked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pro Shop Signage"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30267"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status_alias_of"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"is_my_job"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Furry Creek Golf Academy"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total_seconds_worked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-
+  </span><span class="s2">"tasks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"217"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"task_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"task_group_order_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Research"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_group_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"estimate_service_group_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"service_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"estimate_service_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"estimate_service_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"estimate_service_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assigned_by_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"859"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assigned_to_role_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assigned_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_by_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assigned_by_fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eddard Stark"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assigned_to_role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assigned_to_role_fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account Executive"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Draft"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"percent_complete"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"estimated_hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"actual_hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"auth_user_actual_hours"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-30 07:59:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23:59:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"due_date_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-11 07:59:59"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"due_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-10"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"priority_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"milestone_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"milestone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Research"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Specification and Concept"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"timeline_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"estimate_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"client_printable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"docket_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"docket_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Corporate Website"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"docket_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30179"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"docket_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Corporate Branding Campaign"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great Atlantic Insurance"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GAD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_by_fullname"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"docket_status_alias_of"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dependent_tasks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"task_contact_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assigned_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"completed_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"modified_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-20"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"task_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Time Line Task"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"base_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"assignees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"assignee_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"859"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_primary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eddard Stark"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"initials"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"787"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"task_group_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"task_group_order_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coding/Testing"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"service_group_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"estimate_service_group_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"service_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"service_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"estimate_service_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"estimate_service_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"estimate_service_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"assigned_by_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"assigned_to_role_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"assigned_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADM"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_by_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"assigned_by_fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Administrator "</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"assigned_to_role"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"assigned_to_role_fullname"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Draft"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"percent_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"estimated_hours"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"actual_hours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"auth_user_actual_hours"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_date_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"due_date_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"due_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"due_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"priority_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"milestone_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"milestone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"Coding/Testing"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"Web Design"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"timeline_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"estimate_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"client_printable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"docket_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"docket_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Website Re-Design"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"docket_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30185"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"docket_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Macdonald and Company"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"company_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_by_fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chris Wilson"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"docket_status_alias_of"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoiced"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dependent_tasks"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"task_contact_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"assigned_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2011-12-11 05:18:02"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"completed_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"modified_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-07-13"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"task_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Time Line Task"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"base_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Task"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"assignees"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"more"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1403"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
 </span></code></pre>
-<p>This endpoint retrieves all _______s.</p>
+<p>This endpoint retrieves all Tasks.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
+<p><code class="prettyprint">GET https://api.functionpoint.com/v1.1/tasks</code></p>
 
-<h3 id="query-parameters">Query Parameters</h3>
+<details>
+  <summary>Click to expand</summary>
+  <div>
+  
+### Query Parameters
+Parameter | Type | Description
+&mdash;&mdash;&mdash; | &mdash;&mdash;- | &mdash;&mdash;&mdash;&ndash;
+ID  |   lalal  | yaddayaddayadda
+task_group_id  |     | 
+order  |     | 
+task_group_order_by  |     | 
+title  |     |  
+description  |     |  
+service_group_id  |     |  
+estimate_service_group_name  |     |  
+service_id  |     |  
+service_code  |     |  
+service_name  |     |  
+estimate_service_id  |     |  
+estimate_service_code  |     |  
+estimate_service_name  |     |  
+assigned_by_id  |     | 
+assigned_to_role_id  |     | 
+assigned_by  |     |  
+created_by_id  |     |  
+assigned_by_fullname  |     | 
+assigned_to_role  |     | 
+assigned_to_role_fullname  |     |  
+status_id  |     |  
+status  |     |  
+percent_complete  |     | 
+estimated_hours  |     |  
+actual_hours  |     |  
+auth_user_actual_hours  |     |  
+start_date_time  |     |  
+start_time  |     |  
+start_date  |     |  
+due_date_time  |     | 
+due_time  |     |  
+due_date  |     |  
+priority  |     |  
+priority_id  |     |  
+milestone_id  |     |  
+milestone  |     |  
+tags  |     | 
+timeline_id  |     | 
+estimate_id  |     |  
+is_template  |     |  
+client_printable  |     | 
+docket_id  |     | 
+docket_name  |     |  
+docket_number  |     |  
+docket_status  |     | 
+project_id  |     |  
+project_name  |     |  
+company_id  |     |  
+company_name  |     |  
+company_code  |     |  
+created_by_fullname  |     |  
+docket_status_alias_of  |     | 
+dependent_tasks  |     |  
+type_id  |     | 
+task_contact_id  |     |  
+assigned_date  |     |  
+creation_date  |     |  
+completed_date  |     |  
+modified_date  |     |  
+task_type  |     |  
+base_type  |     |  
+assignees  |     |
 
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+</div>
+</details>
 
 <h2 id="find-a-task-by-id">Find a Task by ID</h2>
 
@@ -1464,26 +1547,331 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
+<p><code class="prettyprint">GET https://api.functionpoint.com/v1.1/tasks</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>ID</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>task_group_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_group_order_by</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_group_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_group_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_by_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_to_role_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_by</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>created_by_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_by_fullname</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_to_role</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_to_role_fullname</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>status_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>percent_complete</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimated_hours</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>actual_hours</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>auth_user_actual_hours</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>start_date_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>start_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>due_date_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>due_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>due_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>priority</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>priority_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>milestone_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>milestone</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>timeline_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>is_template</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>client_printable</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_status</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>project_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>project_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>created_by_fullname</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_status_alias_of</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dependent_tasks</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_contact_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>creation_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>completed_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>modified_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_type</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>base_type</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assignees</td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -1549,6 +1937,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
