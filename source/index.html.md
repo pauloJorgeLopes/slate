@@ -3,6 +3,7 @@ title: API Reference
 
 language_tabs:
   - shell
+  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -35,7 +36,6 @@ curl -u cm-user: -X POST https://apidocs.functionpoint.com/v1.1/oauth2/token
   -d "password=YOUR_PASSWORD" 
   -d "scope=basic"
 ```
-
 Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
 Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
@@ -134,7 +134,7 @@ This endpoint retrieves all Companies.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
@@ -191,7 +191,7 @@ This endpoint retrieves only the Company specified in the URL. The default behav
 
 ### HTTP Request
 
-`GET hhttps://api.functionpoint.com/v1.1/companies/[A_CONTACT_ID]`
+`GET hhttps://api.functionpoint.com/v1.1/companies/[A_COMPANY_ID]`
 
 ### URL Parameters
 
@@ -249,7 +249,7 @@ curl https://api.functionpoint.com/v1.1/contacts
       "cell_phone": null,
       "direct_phone": null,
       "phone_extension": null,
-      "email": noone+915@functionpoint.com,
+      "email": "noone+915@functionpoint.com",
       "mailing_list": null,
       "birthdate": null,
       "company_id": "2",
@@ -263,6 +263,7 @@ curl https://api.functionpoint.com/v1.1/contacts
       "role_id": null,
       "is_staff": false
     },
+    ...
     {
       "ID": "916",
       "first_name": "Sample",
@@ -301,7 +302,7 @@ This endpoint retrieves all contacts.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
@@ -347,7 +348,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
   "http_code": 201
 }
 ```
-This endpoint retrieves the specified _______.
+This endpoint retrieves the specified contact.
 
 ### HTTP Request
 
@@ -355,7 +356,7 @@ This endpoint retrieves the specified _______.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
@@ -485,7 +486,7 @@ This endpoint retrieves all _______s.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
@@ -496,7 +497,7 @@ available | true | If set to false, the result will include kittens that have al
 > Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
 
 ```shell
-curl https://api.functionpoint.com/v1.1/_______s
+curl https://api.functionpoint.com/v1.1/jobs
   -H "Authorization: OAuth <YOUR_ACCESS_TOKEN>"
 ```
 
@@ -561,7 +562,7 @@ curl https://api.functionpoint.com/v1.1/_______s
 "http_code": 200
 }
 ```
-This endpoint retrieves all _______s.
+This endpoint retrieves all jobs.
 
 ### HTTP Request
 
@@ -569,7 +570,7 @@ This endpoint retrieves all _______s.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
@@ -586,28 +587,24 @@ curl https://api.functionpoint.com/v1.1/jobs/5
 
 ```json
 {
-			"ID": "268",
-			"service_type": "IS",
-			"name": "Coordination",
-			"code": "C",
-			"order": "5"
-		},
-		{
-			"ID": "272",
-			"service_type": "IS",
-			"name": "Copywriting\/Editing",
-			"code": "CE",
-			"order": "9"
-		}
-	],
-	"count": 100,
-	"offset": 0,
-	"more": true,
-	"status": "success",
-	"http_code": 200
+  "jobs": [
+    {
+      "ID": "5",
+      "name": "In-House",
+      "number": "30189",
+      "status": "Job Overdue",
+      "status_alias_of": "Open",
+      "is_my_job": "1",
+      "project_name": null,
+      "company_name": "Function Point Productivity Software",
+      "total_seconds_worked": "0"
+    }
+  ],
+  "status": "success",
+  "http_code": 200
 }
 ```
-This endpoint retrieves the specified _______.
+This endpoint retrieves the specified job.
 
 ### HTTP Request
 
@@ -615,7 +612,7 @@ This endpoint retrieves the specified _______.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
@@ -623,42 +620,11 @@ available | true | If set to false, the result will include kittens that have al
 
 
 #Offices
-##Find All Offices
-> Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
-
-```shell
-curl https://api.functionpoint.com/v1.1/_______s
-  -H "Authorization: OAuth <YOUR_ACCESS_TOKEN>"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "these":[
-  {"this":"that"},
-  {"this":"that"}
-  ]
-}
-```
-This endpoint retrieves all _______s.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
 ##Find an Office by ID
 > Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
 
 ```shell
-curl https://api.functionpoint.com/v1.1/_______/________ID 
+curl https://api.functionpoint.com/v1.1/offices/2 
   -H "Authorization: OAuth <YOUR_ACCESS_TOKEN>"
 ```
 
@@ -677,7 +643,7 @@ This endpoint retrieves the specified _______.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
@@ -712,7 +678,7 @@ This endpoint retrieves all _______s.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
@@ -721,7 +687,7 @@ available | true | If set to false, the result will include kittens that have al
 > Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
 
 ```shell
-curl https://api.functionpoint.com/v1.1/_______/________ID 
+curl https://api.functionpoint.com/v1.1/phase_services/3 
   -H "Authorization: OAuth <YOUR_ACCESS_TOKEN>"
 ```
 
@@ -732,7 +698,7 @@ curl https://api.functionpoint.com/v1.1/_______/________ID
   "this":"that"
 }
 ```
-This endpoint retrieves the specified _______.
+This endpoint retrieves the specified phase.
 
 ### HTTP Request
 
@@ -740,7 +706,7 @@ This endpoint retrieves the specified _______.
 
 ### Query Parameters
 
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
@@ -752,7 +718,7 @@ available | true | If set to false, the result will include kittens that have al
 > Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
 
 ```shell
-curl https://api.functionpoint.com/v1.1/_______s
+curl https://api.functionpoint.com/v1.1/tags
   -H "Authorization: OAuth <YOUR_ACCESS_TOKEN>"
 ```
 
@@ -766,7 +732,7 @@ curl https://api.functionpoint.com/v1.1/_______s
   ]
 }
 ```
-This endpoint retrieves all _______s.
+This endpoint retrieves all Tags.
 
 ### HTTP Request
 
@@ -774,44 +740,19 @@ This endpoint retrieves all _______s.
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-##Find a Tag by ID
-> Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
-
-```shell
-curl https://api.functionpoint.com/v1.1/_______/________ID 
-  -H "Authorization: OAuth <YOUR_ACCESS_TOKEN>"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "this":"that"
-}
-```
-This endpoint retrieves the specified _______.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
+Field | Type | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
 
 
 #Tasks
-
 ##Find All Tasks
 > Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
+
+By default, hitting this endpoint without specifying fields will return only the objects' ID numbers.
+
+
 
 ```shell
 curl https://api.functionpoint.com/v1.1/tasks
@@ -822,56 +763,242 @@ curl https://api.functionpoint.com/v1.1/tasks
 
 ```json
 {
-  "jobs": [
-    {
-      "ID": "5",
-      "name": "In-House",
-      "number": "30189",
-      "status": "Job Overdue",
-      "status_alias_of": "Open",
-      "is_my_job": "1",
-      "project_name": null,
-      "company_name": "Function Point Productivity Software",
-      "total_seconds_worked": "0"
-    },
-    {
-      "ID": "56",
-      "name": "Pro Shop Brochure",
-      "number": "30264",
-      "status": "Open",
-      "status_alias_of": "Open",
-      "is_my_job": "1",
-      "project_name": null,
-      "company_name": "Furry Creek Golf Academy",
-      "total_seconds_worked": "0"
-    },
-    {
-      "ID": "58",
-      "name": "Pro Shop Signage",
-      "number": "30267",
-      "status": "Open",
-      "status_alias_of": "Open",
-      "is_my_job": "1",
-      "project_name": null,
-      "company_name": "Furry Creek Golf Academy",
-      "total_seconds_worked": "0"
-    },
-    ...
-    
+  "tasks": [
+      {
+        "ID": "217",
+        "task_group_id": "1",
+        "order": "1",
+        "task_group_order_by": null,
+        "title": "Research",
+        "description": null,
+        "service_group_id": null,
+        "estimate_service_group_name": null,
+        "service_id": null,
+        "service_code": null,
+        "service_name": null,
+        "estimate_service_id": null,
+        "estimate_service_code": null,
+        "estimate_service_name": null,
+        "assigned_by_id": "859",
+        "assigned_to_role_id": "8",
+        "assigned_by": "ES",
+        "created_by_id": null,
+        "assigned_by_fullname": "Eddard Stark",
+        "assigned_to_role": "AE",
+        "assigned_to_role_fullname": "Account Executive",
+        "status_id": "1",
+        "status": "Draft",
+        "percent_complete": "0.00",
+        "estimated_hours": "0",
+        "actual_hours": "0.00",
+        "auth_user_actual_hours": null,
+        "start_date_time": "2016-11-30 07:59:00",
+        "start_time": "23:59:00",
+        "start_date": "2016-11-29",
+        "due_date_time": "2016-12-11 07:59:59",
+        "due_time": null,
+        "due_date": "2016-12-10",
+        "priority": null,
+        "priority_id": null,
+        "milestone_id": null,
+        "milestone": null,
+        "tags": [
+          "Research",
+          "Specification and Concept"
+        ],
+        "timeline_id": "21",
+        "estimate_id": "1",
+        "is_template": "0",
+        "client_printable": "0",
+        "docket_id": "1",
+        "docket_name": "Corporate Website",
+        "docket_number": "30179",
+        "docket_status": "8",
+        "project_id": "1",
+        "project_name": "Corporate Branding Campaign",
+        "company_id": "5",
+        "company_name": "Great Atlantic Insurance",
+        "company_code": "GAD",
+        "created_by_fullname": null,
+        "docket_status_alias_of": "Open",
+        "dependent_tasks": null,
+        "type_id": "4",
+        "task_contact_id": null,
+        "assigned_date": null,
+        "creation_date": null,
+        "completed_date": null,
+        "modified_date": "2016-10-20",
+        "task_type": "Time Line Task",
+        "base_type": "Task",
+        "assignees": [
+          {
+            "assignee_id": "859",
+            "is_primary": "1",
+            "full_name": "Eddard Stark",
+            "initials": "ES"
+          }
+        ]
+      },
+      ...
+      {
+            "ID": "787",
+            "task_group_id": "32",
+            "order": "19",
+            "task_group_order_by": null,
+            "title": "Coding/Testing",
+            "description": null,
+            "service_group_id": null,
+            "estimate_service_group_name": null,
+            "service_id": null,
+            "service_code": null,
+            "service_name": null,
+            "estimate_service_id": null,
+            "estimate_service_code": null,
+            "estimate_service_name": null,
+            "assigned_by_id": "1",
+            "assigned_to_role_id": null,
+            "assigned_by": "ADM",
+            "created_by_id": "3",
+            "assigned_by_fullname": "Administrator ",
+            "assigned_to_role": null,
+            "assigned_to_role_fullname": null,
+            "status_id": "1",
+            "status": "Draft",
+            "percent_complete": null,
+            "estimated_hours": null,
+            "actual_hours": "0.00",
+            "auth_user_actual_hours": null,
+            "start_date_time": null,
+            "start_time": null,
+            "start_date": null,
+            "due_date_time": null,
+            "due_time": null,
+            "due_date": null,
+            "priority": null,
+            "priority_id": null,
+            "milestone_id": null,
+            "milestone": null,
+            "tags": [
+              "Coding/Testing",
+              "Web Design"
+            ],
+            "timeline_id": "85",
+            "estimate_id": "7",
+            "is_template": "0",
+            "client_printable": "0",
+            "docket_id": "4",
+            "docket_name": "Website Re-Design",
+            "docket_number": "30185",
+            "docket_status": "6",
+            "project_id": null,
+            "project_name": null,
+            "company_id": "6",
+            "company_name": "Macdonald and Company",
+            "company_code": "MC",
+            "created_by_fullname": "Chris Wilson",
+            "docket_status_alias_of": "Invoiced",
+            "dependent_tasks": null,
+            "type_id": "4",
+            "task_contact_id": null,
+            "assigned_date": null,
+            "creation_date": "2011-12-11 05:18:02",
+            "completed_date": null,
+            "modified_date": "2012-07-13",
+            "task_type": "Time Line Task",
+            "base_type": "Task",
+            "assignees": []
+          }
+        ],
+  "count": 100,
+  "offset": 0,
+  "more": true,
+  "total_count": "1403",
+  "status": "success",
+  "http_code": 200
+}
     
 ```
-This endpoint retrieves all _______s.
+This endpoint retrieves all Tasks.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://api.functionpoint.com/v1.1/tasks`
 
+<details>
+  <summary>Click to expand</summary>
+  <div>
+  
 ### Query Parameters
-
-Parameter | Default | Description
+Parameter | Type | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+ID  |   lalal  | yaddayaddayadda
+task_group_id  |     | 
+order  |     | 
+task_group_order_by  |     | 
+title  |     |  
+description  |     |  
+service_group_id  |     |  
+estimate_service_group_name  |     |  
+service_id  |     |  
+service_code  |     |  
+service_name  |     |  
+estimate_service_id  |     |  
+estimate_service_code  |     |  
+estimate_service_name  |     |  
+assigned_by_id  |     | 
+assigned_to_role_id  |     | 
+assigned_by  |     |  
+created_by_id  |     |  
+assigned_by_fullname  |     | 
+assigned_to_role  |     | 
+assigned_to_role_fullname  |     |  
+status_id  |     |  
+status  |     |  
+percent_complete  |     | 
+estimated_hours  |     |  
+actual_hours  |     |  
+auth_user_actual_hours  |     |  
+start_date_time  |     |  
+start_time  |     |  
+start_date  |     |  
+due_date_time  |     | 
+due_time  |     |  
+due_date  |     |  
+priority  |     |  
+priority_id  |     |  
+milestone_id  |     |  
+milestone  |     |  
+tags  |     | 
+timeline_id  |     | 
+estimate_id  |     |  
+is_template  |     |  
+client_printable  |     | 
+docket_id  |     | 
+docket_name  |     |  
+docket_number  |     |  
+docket_status  |     | 
+project_id  |     |  
+project_name  |     |  
+company_id  |     |  
+company_name  |     |  
+company_code  |     |  
+created_by_fullname  |     |  
+docket_status_alias_of  |     | 
+dependent_tasks  |     |  
+type_id  |     | 
+task_contact_id  |     |  
+assigned_date  |     |  
+creation_date  |     |  
+completed_date  |     |  
+modified_date  |     |  
+task_type  |     |  
+base_type  |     |  
+assignees  |     |
+
+</div>
+</details>
+
+
 
 ##Find a Task by ID
 > Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
@@ -1044,15 +1171,74 @@ This endpoint retrieves the specified Task.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://api.functionpoint.com/v1.1/tasks`
 
 ### Query Parameters
-
-Parameter | Default | Description
+Parameter | Type | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
+    ID  |     | 
+    task_group_id  |     | 
+    order  |     | 
+    task_group_order_by  |     | 
+    title  |     |  
+    description  |     |  
+    service_group_id  |     |  
+    estimate_service_group_name  |     |  
+    service_id  |     |  
+    service_code  |     |  
+    service_name  |     |  
+    estimate_service_id  |     |  
+    estimate_service_code  |     |  
+    estimate_service_name  |     |  
+    assigned_by_id  |     | 
+    assigned_to_role_id  |     | 
+    assigned_by  |     |  
+    created_by_id  |     |  
+    assigned_by_fullname  |     | 
+    assigned_to_role  |     | 
+    assigned_to_role_fullname  |     |  
+    status_id  |     |  
+    status  |     |  
+    percent_complete  |     | 
+    estimated_hours  |     |  
+    actual_hours  |     |  
+    auth_user_actual_hours  |     |  
+    start_date_time  |     |  
+    start_time  |     |  
+    start_date  |     |  
+    due_date_time  |     | 
+    due_time  |     |  
+    due_date  |     |  
+    priority  |     |  
+    priority_id  |     |  
+    milestone_id  |     |  
+    milestone  |     |  
+    tags  |     | 
+    timeline_id  |     | 
+    estimate_id  |     |  
+    is_template  |     |  
+    client_printable  |     | 
+    docket_id  |     | 
+    docket_name  |     |  
+    docket_number  |     |  
+    docket_status  |     | 
+    project_id  |     |  
+    project_name  |     |  
+    company_id  |     |  
+    company_name  |     |  
+    company_code  |     |  
+    created_by_fullname  |     |  
+    docket_status_alias_of  |     | 
+    dependent_tasks  |     |  
+    type_id  |     | 
+    task_contact_id  |     |  
+    assigned_date  |     |  
+    creation_date  |     |  
+    completed_date  |     |  
+    modified_date  |     |  
+    task_type  |     |  
+    base_type  |     |  
+    assignees  |     |
 
 
 
