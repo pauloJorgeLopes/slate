@@ -1169,73 +1169,73 @@ This endpoint retrieves the specified Task.
 
 `GET https://api.functionpoint.com/v1.1/tasks/`
 
-### Query Parameters
-<div class="table">
+<div>
 
+### Query Parameters
 Parameter | Type | Description
 --------- | ------- | -----------
-    ID  |     | 
-    task_group_id  |     | 
-    order  |     | 
-    task_group_order_by  |     | 
-    title  |     |  
-    description  |     |  
-    service_group_id  |     |  
-    estimate_service_group_name  |     |  
-    service_id  |     |  
-    service_code  |     |  
-    service_name  |     |  
-    estimate_service_id  |     |  
-    estimate_service_code  |     |  
-    estimate_service_name  |     |  
-    assigned_by_id  |     | 
-    assigned_to_role_id  |     | 
-    assigned_by  |     |  
-    created_by_id  |     |  
-    assigned_by_fullname  |     | 
-    assigned_to_role  |     | 
-    assigned_to_role_fullname  |     |  
-    status_id  |     |  
-    status  |     |  
-    percent_complete  |     | 
-    estimated_hours  |     |  
-    actual_hours  |     |  
-    auth_user_actual_hours  |     |  
-    start_date_time  |     |  
-    start_time  |     |  
-    start_date  |     |  
-    due_date_time  |     | 
-    due_time  |     |  
-    due_date  |     |  
-    priority  |     |  
-    priority_id  |     |  
-    milestone_id  |     |  
-    milestone  |     |  
-    tags  |     | 
-    timeline_id  |     | 
-    estimate_id  |     |  
-    is_template  |     |  
-    client_printable  |     | 
-    docket_id  |     | 
-    docket_name  |     |  
-    docket_number  |     |  
-    docket_status  |     | 
-    project_id  |     |  
-    project_name  |     |  
-    company_id  |     |  
-    company_name  |     |  
-    company_code  |     |  
-    created_by_fullname  |     |  
-    docket_status_alias_of  |     | 
-    dependent_tasks  |     |  
-    type_id  |     | 
-    task_contact_id  |     |  
-    assigned_date  |     |  
-    creation_date  |     |  
-    completed_date  |     |  
-    modified_date  |     |  
-    task_type  |     |  
-    base_type  |     |  
-    assignees  |     |
-  
-  </div>
+ID  |     | 
+task_group_id  |     | 
+order  |     | 
+task_group_order_by  |     | 
+title  |     |  
+description  |     |  
+service_group_id  |     |  
+estimate_service_group_name  |     |  
+service_id  |     |  
+service_code  |     |  
+service_name  |     |  
+estimate_service_id  |     |  
+estimate_service_code  |     |  
+estimate_service_name  |     |  
+assigned_by_id  |     | 
+assigned_to_role_id  |     | 
+assigned_by  |     |  
+created_by_id  |     |  
+assigned_by_fullname  |     | 
+assigned_to_role  |     | 
+assigned_to_role_fullname  |     |  
+status_id  |     |  
+status  |     |  
+percent_complete  |     | 
+estimated_hours  |     |  
+actual_hours  |     |  
+auth_user_actual_hours  |     |  
+start_date_time  |     |  
+start_time  |     |  
+start_date  |     |  
+due_date_time  |     | 
+due_time  |     |  
+due_date  |     |  
+priority  |     |  
+priority_id  |     |  
+milestone_id  |     |  
+milestone  |     |  
+tags  |     | 
+timeline_id  |     | 
+estimate_id  |     |  
+is_template  |     |  
+client_printable  |     | 
+docket_id  |     | 
+docket_name  |     |  
+docket_number  |     |  
+docket_status  |     | 
+project_id  |     |  
+project_name  |     |  
+company_id  |     |  
+company_name  |     |  
+company_code  |     |  
+created_by_fullname  |     |  
+docket_status_alias_of  |     | 
+dependent_tasks  |     |  
+type_id  |     | 
+task_contact_id  |     |  
+assigned_date  |     |  
+creation_date  |     |  
+completed_date  |     |  
+modified_date  |     |  
+task_type  |     |  
+base_type  |     |  
+assignees  |     |
+
+</div>
