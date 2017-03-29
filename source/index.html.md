@@ -587,21 +587,25 @@ curl https://api.functionpoint.com/v1.1/jobs/5
 
 ```json
 {
-  "jobs": [
-    {
-      "ID": "5",
-      "name": "In-House",
-      "number": "30189",
-      "status": "Job Overdue",
-      "status_alias_of": "Open",
-      "is_my_job": "1",
-      "project_name": null,
-      "company_name": "Function Point Productivity Software",
-      "total_seconds_worked": "0"
-    }
-  ],
-  "status": "success",
-  "http_code": 200
+			"ID": "268",
+			"service_type": "IS",
+			"name": "Coordination",
+			"code": "C",
+			"order": "5"
+		},
+		{
+			"ID": "272",
+			"service_type": "IS",
+			"name": "Copywriting\/Editing",
+			"code": "CE",
+			"order": "9"
+		}
+	],
+	"count": 100,
+	"offset": 0,
+	"more": true,
+	"status": "success",
+	"http_code": 200
 }
 ```
 This endpoint retrieves the specified job.
@@ -923,10 +927,6 @@ This endpoint retrieves all Tasks.
 ### HTTP Request
 
 `GET https://api.functionpoint.com/v1.1/tasks`
-
-<details>
-  <summary>Click to expand</summary>
-  <div>
   
 ### Query Parameters
 Parameter | Type | Description
@@ -994,11 +994,6 @@ modified_date  |     |
 task_type  |     |  
 base_type  |     |  
 assignees  |     |
-
-</div>
-</details>
-
-
 
 ##Find a Task by ID
 > Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
@@ -1167,11 +1162,12 @@ curl https://api.functionpoint.com/v1.1/tasks/3671
   }
 }    
 ```
+
 This endpoint retrieves the specified Task.
 
 ### HTTP Request
 
-`GET https://api.functionpoint.com/v1.1/tasks`
+`GET https://api.functionpoint.com/v1.1/tasks/`
 
 ### Query Parameters
 Parameter | Type | Description
