@@ -254,7 +254,183 @@
 
 <p><code class="prettyprint">Authorization: YOUR_ACCESS_TOKEN</code></p>
 
-<h1 id="contacts">Contacts</h1>
+          <h1 id="companies">Companies</h1>
+
+<p>Companies are the central objects in the system. 
+Nearly every other object can, on some level, be linked back to a company. 
+With access to the API you will be able to:</p>
+
+<h2 id="find-all-companies-yo">Find All Companies YO</h2>
+
+<blockquote>
+<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/companies 
+  -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Function Point Productivity Software"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FP"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addressOne"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200-1622 West 7th Avenue"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addressTwo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postalZip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V6J 1S5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604-731-2522"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604-731-3511"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"webURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.functionpoin.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statusID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"typeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"industryTypeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"classificationID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"qualificationID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountExecutiveID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sourceID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"companyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Office"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"industryType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"classification"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountExecutive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sourceDescription"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"661"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample Company"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample company created for the API documentation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addressOne"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main Street"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"addressTwo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit 456"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Townsville"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"provState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postalZip"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"webURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statusID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"typeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"industryTypeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"classificationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"qualificationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountExecutiveID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sourceID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"companyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"industryType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"classification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engaged"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 - Client"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountExecutive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sourceDescription"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">   
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Companies.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.functionpoint.com/v1.1/companies</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>include_cats</td>
+<td>false</td>
+<td>If set to true, the result will also include cats.</td>
+</tr>
+<tr>
+<td>available</td>
+<td>true</td>
+<td>If set to false, the result will include kittens that have already been adopted.</td>
+</tr>
+</tbody></table>
+
+<h2 id="find-a-company-by-id">Find a Company by ID</h2>
+
+<blockquote>
+<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/companies/661 
+  -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"661"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample Company"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample company created for the API documentation"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"addressOne"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main Street"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"addressTwo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit 456"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Townsville"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"provState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postalZip"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"webURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"statusID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"typeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"industryTypeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"classificationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"qualificationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accountExecutiveID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sourceID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"companyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"industryType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"classification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engaged"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 - Client"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"accountExecutive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sourceDescription"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves only the Company specified in the URL. The default behaviour is for all fields of a Company to be listed.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET hhttps://api.functionpoint.com/v1.1/companies/[A_COMPANY_ID]</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the kitten to retrieve</td>
+</tr>
+</tbody></table>
+
+          <h1 id="contacts">Contacts</h1>
 
 <h2 id="find-all-contacts">Find All Contacts</h2>
 
@@ -446,7 +622,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 </tbody></table>
 
-<h1 id="service-groups">Service Groups</h1>
+          <h1 id="service-groups">Service Groups</h1>
 
 <p>Service Groups are collections of related <a href="#services">Services</a></p>
 
@@ -529,7 +705,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 </tbody></table>
 
-<h1 id="services">Services</h1>
+          <h1 id="services">Services</h1>
 
 <h2 id="find-all-services">Find All Services</h2>
 
@@ -615,7 +791,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 </tbody></table>
 
-<h1 id="jobs">Jobs</h1>
+          <h1 id="jobs">Jobs</h1>
 
 <h2 id="find-all-jobs">Find All Jobs</h2>
 
@@ -773,7 +949,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 </tbody></table>
 
-<h1 id="offices">Offices</h1>
+          <h1 id="offices">Offices</h1>
 
 <h2 id="find-an-office-by-id">Find an Office by ID</h2>
 
@@ -817,7 +993,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 </tbody></table>
 
-<h1 id="phases">Phases</h1>
+          <h1 id="phases">Phases</h1>
 
 <h2 id="find-all-phases">Find All phases</h2>
 
@@ -906,7 +1082,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 </tbody></table>
 
-<h1 id="tags">Tags</h1>
+          <h1 id="tags">Tags</h1>
 
 <h2 id="find-all-tags">Find All Tags</h2>
 
@@ -953,7 +1129,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 </tbody></table>
 
-<h1 id="tasks">Tasks</h1>
+          <h1 id="tasks">Tasks</h1>
 
 <h2 id="find-all-tasks">Find All Tasks</h2>
 
@@ -1947,182 +2123,6 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 <td>assignees</td>
 <td></td>
 <td></td>
-</tr>
-</tbody></table>
-
-          <h1 id="companies">Companies</h1>
-
-<p>Companies are the central objects in the system. 
-Nearly every other object can, on some level, be linked back to a company. 
-With access to the API you will be able to:</p>
-
-<h2 id="find-all-companies">Find All Companies</h2>
-
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/companies 
-  -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Function Point Productivity Software"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FP"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"addressOne"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200-1622 West 7th Avenue"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"addressTwo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vancouver"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"provState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BC"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"postalZip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V6J 1S5"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604-731-2522"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"604-731-3511"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"webURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.functionpoin.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"statusID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"typeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"industryTypeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"classificationID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"qualificationID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountExecutiveID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sourceID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"companyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Office"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"industryType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"classification"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountExecutive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sourceDescription"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"661"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample Company"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SC"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample company created for the API documentation"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"addressOne"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main Street"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"addressTwo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit 456"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Townsville"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"provState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"postalZip"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"webURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"statusID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"typeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"industryTypeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"classificationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"qualificationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountExecutiveID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sourceID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"companyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"industryType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"classification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engaged"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 - Client"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountExecutive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sourceDescription"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">}</span><span class="w">   
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all Companies.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://api.functionpoint.com/v1.1/companies</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<h2 id="find-a-company-by-id">Find a Company by ID</h2>
-
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/companies/661 
-  -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"661"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample Company"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample company created for the API documentation"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"addressOne"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main Street"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"addressTwo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unit 456"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Townsville"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"provState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"postalZip"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"webURL"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"statusID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"typeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"industryTypeID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"classificationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qualificationID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"accountExecutiveID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sourceID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"companyType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"industryType"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"classification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engaged"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qualification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 - Client"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"accountExecutive"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sourceDescription"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves only the Company specified in the URL. The default behaviour is for all fields of a Company to be listed.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET hhttps://api.functionpoint.com/v1.1/companies/[A_COMPANY_ID]</code></p>
-
-<h3 id="url-parameters">URL Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
 </tr>
 </tbody></table>
 
