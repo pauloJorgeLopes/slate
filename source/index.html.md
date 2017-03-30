@@ -929,71 +929,325 @@ This endpoint retrieves all Tasks.
 `GET https://api.functionpoint.com/v1.1/tasks`
   
 ### Query Parameters
-Parameter | Type | Description
---------- | ------- | -----------
-ID  |   lalal  | yaddayaddayadda
-task_group_id  |     | 
-order  |     | 
-task_group_order_by  |     | 
-title  |     |  
-description  |     |  
-service_group_id  |     |  
-estimate_service_group_name  |     |  
-service_id  |     |  
-service_code  |     |  
-service_name  |     |  
-estimate_service_id  |     |  
-estimate_service_code  |     |  
-estimate_service_name  |     |  
-assigned_by_id  |     | 
-assigned_to_role_id  |     | 
-assigned_by  |     |  
-created_by_id  |     |  
-assigned_by_fullname  |     | 
-assigned_to_role  |     | 
-assigned_to_role_fullname  |     |  
-status_id  |     |  
-status  |     |  
-percent_complete  |     | 
-estimated_hours  |     |  
-actual_hours  |     |  
-auth_user_actual_hours  |     |  
-start_date_time  |     |  
-start_time  |     |  
-start_date  |     |  
-due_date_time  |     | 
-due_time  |     |  
-due_date  |     |  
-priority  |     |  
-priority_id  |     |  
-milestone_id  |     |  
-milestone  |     |  
-tags  |     | 
-timeline_id  |     | 
-estimate_id  |     |  
-is_template  |     |  
-client_printable  |     | 
-docket_id  |     | 
-docket_name  |     |  
-docket_number  |     |  
-docket_status  |     | 
-project_id  |     |  
-project_name  |     |  
-company_id  |     |  
-company_name  |     |  
-company_code  |     |  
-created_by_fullname  |     |  
-docket_status_alias_of  |     | 
-dependent_tasks  |     |  
-type_id  |     | 
-task_contact_id  |     |  
-assigned_date  |     |  
-creation_date  |     |  
-completed_date  |     |  
-modified_date  |     |  
-task_type  |     |  
-base_type  |     |  
-assignees  |     |
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>task_group_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_group_order_by</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_group_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_group_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_by_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_to_role_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_by</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>created_by_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_by_fullname</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_to_role</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_to_role_fullname</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>status_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>percent_complete</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimated_hours</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>actual_hours</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>auth_user_actual_hours</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>start_date_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>start_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>due_date_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>due_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>due_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>priority</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>priority_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>milestone_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>milestone</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>timeline_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>is_template</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>client_printable</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_status</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>project_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>project_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>created_by_fullname</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_status_alias_of</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dependent_tasks</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_contact_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>creation_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>completed_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>modified_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_type</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>base_type</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assignees</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 
 ##Find a Task by ID
 > Make sure to replace `YOUR_ACCESS_TOKEN` with your valid API token.
@@ -1171,72 +1425,326 @@ This endpoint retrieves the specified Task.
 
 ### Query Parameters
 
-<div id="someId" markdown="1">
-
-Parameter | Type | Description
---------- | ------- | -----------
-ID  |     | 
-task_group_id  |     | 
-order  |     | 
-task_group_order_by  |     | 
-title  |     |  
-description  |     |  
-service_group_id  |     |  
-estimate_service_group_name  |     |  
-service_id  |     |  
-service_code  |     |  
-service_name  |     |  
-estimate_service_id  |     |  
-estimate_service_code  |     |  
-estimate_service_name  |     |  
-assigned_by_id  |     | 
-assigned_to_role_id  |     | 
-assigned_by  |     |  
-created_by_id  |     |  
-assigned_by_fullname  |     | 
-assigned_to_role  |     | 
-assigned_to_role_fullname  |     |  
-status_id  |     |  
-status  |     |  
-percent_complete  |     | 
-estimated_hours  |     |  
-actual_hours  |     |  
-auth_user_actual_hours  |     |  
-start_date_time  |     |  
-start_time  |     |  
-start_date  |     |  
-due_date_time  |     | 
-due_time  |     |  
-due_date  |     |  
-priority  |     |  
-priority_id  |     |  
-milestone_id  |     |  
-milestone  |     |  
-tags  |     | 
-timeline_id  |     | 
-estimate_id  |     |  
-is_template  |     |  
-client_printable  |     | 
-docket_id  |     | 
-docket_name  |     |  
-docket_number  |     |  
-docket_status  |     | 
-project_id  |     |  
-project_name  |     |  
-company_id  |     |  
-company_name  |     |  
-company_code  |     |  
-created_by_fullname  |     |  
-docket_status_alias_of  |     | 
-dependent_tasks  |     |  
-type_id  |     | 
-task_contact_id  |     |  
-assigned_date  |     |  
-creation_date  |     |  
-completed_date  |     |  
-modified_date  |     |  
-task_type  |     |  
-base_type  |     |  
-assignees  |     |
-
-</div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody class="contentTable">
+<tr>
+<td>ID</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_group_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_group_order_by</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_group_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_group_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>service_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_service_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_by_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_to_role_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_by</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>created_by_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_by_fullname</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_to_role</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_to_role_fullname</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>status_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>percent_complete</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimated_hours</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>actual_hours</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>auth_user_actual_hours</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>start_date_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>start_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>due_date_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>due_time</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>due_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>priority</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>priority_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>milestone_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>milestone</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>timeline_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>estimate_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>is_template</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>client_printable</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_status</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>project_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>project_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_name</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>company_code</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>created_by_fullname</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>docket_status_alias_of</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dependent_tasks</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>type_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_contact_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assigned_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>creation_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>completed_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>modified_date</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>task_type</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>base_type</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>assignees</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
