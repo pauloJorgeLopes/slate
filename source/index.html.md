@@ -24,7 +24,7 @@ includes:
 search: true
 ---
 
-# Introduction YO
+# Introduction
 
 Welcome to the Function Point API! You can use our Application Program Inteface to access Function Point API endpoints; those can get information on various items from our database.
 
