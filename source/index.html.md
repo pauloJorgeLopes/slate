@@ -1173,8 +1173,6 @@ This endpoint retrieves the specified Task.
 
 <div>
 
-
-
 Parameter | Type | Description
 --------- | ------- | -----------
 ID  |     | 
@@ -1240,7 +1238,5 @@ modified_date  |     |
 task_type  |     |  
 base_type  |     |  
 assignees  |     |
-
-
 
 </div>
