@@ -229,9 +229,9 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the Function Point API! You can use our Application Program Inteface to access Function Point API endpoints; those can get information on various items from our database.</p>
+<p>Welcome to the <em>Function Point API!</em> You can use our *A*pplication *P*rogram *I*nteface to access Function Point API endpoints. Tthose can provide information on multiple items from our database.</p>
 
-<p>We currently have language bindings in Shell but soon enough will have other languages as well! To your right hand side you can view code snippets to assist you in using our API, use the upper tabs list to cycle between a couple different languages.</p>
+<p>We currently provide Language Bindings in <em>Shell</em> but soon enough will provide other languages as well! To your right hand side you can see code snippets that will assist you in making use of our API, use the upper tabs list to cycle between a couple different languages.</p>
 
 <p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to use it as a base for your own API&rsquo;s documentation as well.</p>
 
@@ -552,12 +552,12 @@ With access to the API you will be able to:</p>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td>Unique ID</td>
 </tr>
 <tr>
 <td>name</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
@@ -567,22 +567,22 @@ With access to the API you will be able to:</p>
 </tr>
 <tr>
 <td>description</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>addressOne</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>addressTwo</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>city</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
@@ -688,6 +688,9 @@ With access to the API you will be able to:</p>
 </tbody></table>
 
           <h1 id="contacts">Contacts</h1>
+
+<p>Contacts is an all encompassing endpoint that covers simple contacts and Staff Members alike, Staff Members can be easily identified by the <code>is_staff</code> flag. Certain fields only apply to staff members and as such are always &lsquo;null&rsquo; to non-staff Contacts
+ie, ?isStaff=1 will only return staff. (Which are contacts with a staff table entry)</p>
 
 <h2 id="find-all-contacts">Find All Contacts</h2>
 
@@ -1933,23 +1936,28 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <p><code class="prettyprint">GET https://api.functionpoint.com/v1.1/tasks</code></p>
 
-<h3 id="table">Query Parameters</h3>
+<h3 id="query-parameters">Query Parameters</h3>
 
-<table id="table"><thead>
+<table><thead>
 <tr>
-<th>Parameter</th>
+<th>Field</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>task_group_id</td>
+<td>ID</td>
+<td>integer</td>
 <td></td>
+</tr>
+<tr>
+<td>task_group_id</td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
 <td>order</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -1959,17 +1967,17 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>title</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>description</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>service_group_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -1979,22 +1987,22 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>service_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
 <td>service_code</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>service_name</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>estimate_service_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2009,12 +2017,12 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>assigned_by_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
 <td>assigned_to_role_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2024,7 +2032,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>created_by_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2044,7 +2052,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>status_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2074,22 +2082,22 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>start_date_time</td>
-<td></td>
+<td>datetime (yyyy-MM-dd hh:mm)</td>
 <td></td>
 </tr>
 <tr>
 <td>start_time</td>
-<td></td>
+<td>time</td>
 <td></td>
 </tr>
 <tr>
 <td>start_date</td>
-<td></td>
+<td>time</td>
 <td></td>
 </tr>
 <tr>
 <td>due_date_time</td>
-<td></td>
+<td>datetime (yyyy-MM-dd hh:mm)</td>
 <td></td>
 </tr>
 <tr>
@@ -2104,17 +2112,17 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>priority</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>priority_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
 <td>milestone_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2129,12 +2137,12 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>timeline_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
 <td>estimate_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2149,7 +2157,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>docket_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2169,7 +2177,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>project_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2179,7 +2187,7 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>company_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2209,12 +2217,12 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>type_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
 <td>task_contact_id</td>
-<td></td>
+<td>integer</td>
 <td></td>
 </tr>
 <tr>
@@ -2429,13 +2437,13 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 
 <h3 id="query-parameters">Query Parameters</h3>
 
-<table id="table"><thead>
+<table><thead>
 <tr>
-<th>Parameter</th>
+<th>Field</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
-</thead><tbody class="contentTable">
+</thead><tbody>
 <tr>
 <td>ID</td>
 <td></td>
