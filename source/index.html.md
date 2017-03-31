@@ -26,13 +26,13 @@ search: true
 
 # Introduction
 
-Welcome to the Function Point API! You can use our Application Program Inteface to access Function Point API endpoints; those can get information on various items from our database.
+Welcome to the *Function Point API!* You can use our *A*pplication *P*rogram *I*nteface to access Function Point API endpoints. Tthose can provide information on multiple items from our database.
 
-We currently have language bindings in Shell but soon enough will have other languages as well! To your right hand side you can view code snippets to assist you in using our API, use the upper tabs list to cycle between a couple different languages.
+We currently provide Language Bindings in *Shell* but soon enough will provide other languages as well! To your right hand side you can see code snippets that will assist you in making use of our API, use the upper tabs list to cycle between a couple different languages.
 
 This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to use it as a base for your own API's documentation as well.
 
-# Authorization
+# Authorization 
 In order to make use of the API 
 
 > Replace YOUR_COMPANY_NAME, YOUR_USER_NAME and YOUR_PASSWORD with the appropriate information
