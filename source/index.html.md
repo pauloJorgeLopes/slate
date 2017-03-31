@@ -32,7 +32,7 @@ We currently have language bindings in Shell but soon enough will have other lan
 
 This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to use it as a base for your own API's documentation as well.
 
-# Authorization 
+# Authorization
 
 In order to make use of the API 
 
