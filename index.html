@@ -198,9 +198,10 @@
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
       <script src="javascripts/all.js"></script>
+    <script src="javascripts/all_nosearch.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,8 +211,8 @@
     <div class="tocify-wrapper">
       <img src="images/logo.png" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="php">PHP</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -1323,18 +1324,18 @@ curl https://api.functionpoint.com/v1.1/contacts/914
     </span><span class="p">},</span><span class="w">
     </span><span class="err">...</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"268"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IS"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordination"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
+      </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"268"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordination"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"272"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IS"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copywriting</span><span class="se">\/</span><span class="s2">Editing"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="w">
+      </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"272"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copywriting</span><span class="se">\/</span><span class="s2">Editing"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">],</span><span class="w">
 </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
@@ -1418,25 +1419,21 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-            </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"268"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coordination"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"272"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copywriting</span><span class="se">\/</span><span class="s2">Editing"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"more"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+  </span><span class="s2">"jobs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In-House"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30189"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Job Overdue"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status_alias_of"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"is_my_job"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Function Point Productivity Software"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_seconds_worked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"http_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves the specified job.</p>
@@ -1652,8 +1649,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>services</td>
-<td>[]</td>
-<td></td>
+<td>Array of <a href="#services">services</a></td>
+<td>List of the Services that comprise this Phase</td>
 </tr>
 </tbody></table>
 
@@ -1729,8 +1726,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
 </tr>
 <tr>
 <td>services</td>
-<td>[]</td>
-<td></td>
+<td>Array of <a href="#services">services</a></td>
+<td>List of the Services that comprise this Phase</td>
 </tr>
 </tbody></table>
 
@@ -2818,8 +2815,8 @@ curl https://api.functionpoint.com/v1.1/contacts/914
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="php">PHP</a>
           </div>
       </div>
     </div>
