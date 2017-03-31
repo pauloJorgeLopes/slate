@@ -32,7 +32,7 @@ We currently have language bindings in Shell but soon enough will have other lan
 
 This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to use it as a base for your own API's documentation as well.
 
-# OAuth 
+# OAuth2 
 
 In order to make use of the API 
 
@@ -45,8 +45,8 @@ curl -u cm-user: -X POST https://apidocs.functionpoint.com/v1.1/oauth2/token
   -d "password=YOUR_PASSWORD" 
   -d "scope=basic"
 ```
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Function Point uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Function Point expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: YOUR_ACCESS_TOKEN`
