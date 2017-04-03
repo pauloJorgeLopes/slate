@@ -38,11 +38,10 @@ In order to make use of the API
 > Replace YOUR_COMPANY_NAME, YOUR_USER_NAME and YOUR_PASSWORD with the appropriate information
 
 ```shell
-curl -u cm-user: -X POST https://apidocs.functionpoint.com/v1.1/oauth2/token 
-  -d "grant_type=password" 
-  -d "username=YOUR_COMPANY_NAME/YOUR_USER_NAME" 
-  -d "password=YOUR_PASSWORD" 
-  -d "scope=basic"
+curl --request POST \
+  --url https://api.functionpoint.com/v1.1/oauth2/token \
+  --header 'content-type: application/x-www-form-urlencoded' \
+  --data 'grant_type=password&username=Paulo%20Demo%2FEmma%20Lauder&password=elauder&client_id=cm-user&scope=basic%20timesheet'
 ```
 Function Point uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
