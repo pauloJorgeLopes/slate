@@ -221,7 +221,7 @@
       </div>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://github.com/lord/slate/blob/master/README.md'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -229,18 +229,16 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the <em>Function Point API!</em> You can use our *A*pplication *P*rogram *I*nteface to access Function Point API endpoints. Tthose can provide information on multiple items from our database.</p>
+<p>Welcome to the <em>Function Point API!</em> </p>
 
-<p>We currently provide Language Bindings in <em>Shell</em> but soon enough will provide other languages as well! To your right hand side you can see code snippets that will assist you in making use of our API, use the upper tabs list to cycle between a couple different languages.</p>
+<p>You can use our <b>A</b>pplication <b>P</b>rogram <b>I</b>nteface to access Function Point API endpoints. With those we can directly access information from multiple sections from our system.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to use it as a base for your own API&rsquo;s documentation as well.</p>
+<p>To make things easier, in the right-hand side you&rsquo;ll find some Copy&amp;Paste-fiendly script samples for you to try out. Right now we are only providing <b>cURL</b> based samples but fear not, fellow dev! Soon enough that upper corner will be filled with tabs for different languages for you to choose from. </p>
 
 <h1 id="authorization">Authorization</h1>
 
-<p>In order to make use of the API </p>
-
 <blockquote>
-<p>Replace <COMPANY_NAME>, <USER_NAME> and <USER_PASSWORD> with the appropriate information</p>
+<p>Replace COMPANY_NAME, USER_NAME and USER_PASSWORD with the appropriate information</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url https://api.functionpoint.com/v1.1/oauth2/token <span class="se">\</span>
@@ -251,15 +249,62 @@
   --data <span class="s1">'client_id=cm-user'</span> <span class="se">\</span>
   --data <span class="s1">'scope=basic timesheet'</span>
 </code></pre>
-<p>Function Point uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Im1hYyI6IndQeEk2a1J4N091OVZ3ak1PTjZUVmpcL2lXSk0iLCJleHAiOjE0OTEyOTY1OTYsInNjcCI6ImJhc2ljIHRpbWVzaGVldCIsIngiOiJnVXJtIiwidiI6MSwidCI6MiwiY2lkIjoiY20tdXNlciIsImZjbCI6ODAwMjE3NCwiZmNvIjoyOQ"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expires_in"</span><span class="p">:</span><span class="w"> </span><span class="mi">43200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bearer"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"basic timesheet"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Im1hYyI6Ilo4K1BuaGptbDRaMXZkVVhrV1NBeWRBV0gwbyIsImV4cCI6MCwic2NwIjoiYmFzaWMgdGltZXNoZWV0IiwieCI6IjVRaGgiLCJ2IjoxLCJ0IjozLCJjaWQiOiJjbS11c2VyIiwiZmNsIjo4MDAyMTc0LCJmY28iOjI5"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>From here on out all FP endpoint hits are required to be accompanied by the provided access_token above </p>
+</blockquote>
 
-<p>Function Point expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Well, first things first. Before we can start poking around Function Point we have to set you up with some credentials for the bouncer to let you through. In order to get your credentials, you will need to POST a request to our OAUTH2 endpoint as shown to your right. </p>
 
-<p><code class="prettyprint">Authorization: YOUR_ACCESS_TOKEN</code></p>
+<p>Now, let&rsquo;s dissect this sample POST request to understand it a bit more:</p>
+
+<h3 id="scopes">Scopes</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>unauthorized_user</td>
+<td>Special scope used internally. It should not come as a shock to you that tokens are NOT granted to those</td>
+</tr>
+<tr>
+<td>guest</td>
+<td>Available for any valid user (e.g. a client&rsquo;s client)</td>
+</tr>
+<tr>
+<td>basic</td>
+<td>available for any valid staff user</td>
+</tr>
+<tr>
+<td>test</td>
+<td>available for any valid user, but only test endpoints should allow this scope</td>
+</tr>
+<tr>
+<td>timesheet</td>
+<td>available fro any valid staff user</td>
+</tr>
+<tr>
+<td>qb</td>
+<td>only available to users with quickbooks permissions in fpX</td>
+</tr>
+</tbody></table>
 
           <h1 id="companies">Companies</h1>
 
-<p>Companies are the central objects in the system. 
+<p>Companies can be seen as the central object int the system. Nearly every other object can, on some level, be linked back to a company.<br>
 Nearly every other object can, on some level, be linked back to a company. 
 With access to the API you will be able to:</p>
 
