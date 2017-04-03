@@ -32,16 +32,20 @@ We currently provide Language Bindings in *Shell* but soon enough will provide o
 
 This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to use it as a base for your own API's documentation as well.
 
-# Authorization
+# Authorization 
 In order to make use of the API 
 
-> Replace YOUR_COMPANY_NAME, YOUR_USER_NAME and YOUR_PASSWORD with the appropriate information
+> Replace <COMPANY_NAME>, <USER_NAME> and <USER_PASSWORD> with the appropriate information
 
 ```shell
 curl --request POST \
   --url https://api.functionpoint.com/v1.1/oauth2/token \
   --header 'content-type: application/x-www-form-urlencoded' \
-  --data 'grant_type=password&username=Paulo%20Demo%2FEmma%20Lauder&password=elauder&client_id=cm-user&scope=basic%20timesheet'
+  --data 'grant_type=password' \
+  --data 'username=<COMPANY_NAME>/<USER NAME>' \
+  --data 'password=<USER_PASSWORD>' \
+  --data 'client_id=cm-user' \
+  --data 'scope=basic timesheet'
 ```
 Function Point uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
