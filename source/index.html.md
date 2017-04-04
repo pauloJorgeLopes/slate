@@ -25,7 +25,7 @@ includes:
 search: true
 ---
 
-# Introduction
+# Introduction 
 
 Welcome to the *Function Point API!* 
 
