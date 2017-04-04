@@ -19,6 +19,7 @@ includes:
   - phases
   - tags
   - tasks
+  - timesheets
   - errors
 
 search: true
@@ -68,7 +69,7 @@ Now, let's dissect this sample POST request to understand it a bit more:
 Name | Description
 --------- | ------- | -----------
 unauthorized_user	| Special scope used internally. It should not come as a shock to you that tokens are NOT granted to those
-guest	| Available for any valid user (e.g. a client's client)
+guest	| Guest scope is available for any validated user, including a Customer's client
 basic	| available for any valid staff user
 test	| available for any valid user, but only test endpoints should allow this scope
 timesheet	| available fro any valid staff user
