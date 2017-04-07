@@ -227,15 +227,16 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="introduction">Introduction</h1>
+        
+          <h1 id="introduction">Introduction</h1>
 
 <p>Welcome to the <em>Function Point API!</em> </p>
 
 <p>You can use our <b>A</b>pplication <b>P</b>rogram <b>I</b>nteface to access Function Point API endpoints. With those we can directly access information from multiple sections from our system.</p>
 
-<p>To make things easier, in the right-hand side you&rsquo;ll find some Copy&amp;Paste-fiendly script samples for you to try out. Right now we are only providing <b>cURL</b> based samples but fear not, fellow dev! Soon enough that upper corner will be filled with tabs for different languages for you to choose from. </p>
+<p>To make things easier, in the right-hand side you&rsquo;ll find some Copy&amp;Paste-fiendly script samples for you to try out. Right now we are only providing <b>cURL</b> based samples but fear not, fellow dev! Soon enough that upper corner will be filled with tabs for different languages for you to choose from.</p>
 
-<h1 id="authorization">Authorization</h1>
+          <h1 id="authorization">Authorization</h1>
 
 <blockquote>
 <p>Replace COMPANY_NAME, USER_NAME and USER_PASSWORD with the appropriate information</p>
@@ -304,17 +305,16 @@
 
           <h1 id="companies">Companies</h1>
 
-<p>Companies can be seen as the central object int the system. Nearly every other object can, on some level, be linked back to a company.<br>
-Nearly every other object can, on some level, be linked back to a company. 
-With access to the API you will be able to:</p>
+<p>Companies can be seen as the central object in the system. Nearly every other object can, on some level, be linked back to a company. With access to the API you will be able to:</p>
 
 <h2 id="find-all-companies">Find All Companies</h2>
 
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/companies 
-  -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s2">"https://api.functionpoint.com/v1.1/companies"</span> <span class="se">\</span>
+  --header <span class="s2">"Authorization: OAuth &lt;:YOUR_ACCESS_TOKEN"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -542,10 +542,11 @@ With access to the API you will be able to:</p>
 <h2 id="find-a-company-by-id">Find a Company by ID</h2>
 
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
+<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token and provide a valid <code class="prettyprint">COMPANY_ID</code></p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/companies/661 
-  -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s2">"https://api.functionpoint.com/v1.1/companies/&lt;:COMPANY_ID&gt;"</span> <span class="se">\</span>
+  --header <span class="s2">"Authorization: OAuth &lt;:YOUR_ACCESS_TOKEN&gt;"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -590,7 +591,7 @@ With access to the API you will be able to:</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET hhttps://api.functionpoint.com/v1.1/companies/&lt;:company_id&gt;</code></p>
+<p><code class="prettyprint">GET https://api.functionpoint.com/v1.1/companies/&lt;:company_id&gt;</code></p>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -740,18 +741,19 @@ With access to the API you will be able to:</p>
 
           <h1 id="contacts">Contacts</h1>
 
-<p>Contacts is an all encompassing endpoint that covers simple contacts and Staff Members alike, Staff Members can be easily identified by the <code>is_staff</code> flag. Certain fields only apply to staff members and as such are always &lsquo;null&rsquo; to non-staff Contacts
+<p>Contacts is an all encompassing endpoint that covers regular Contacts and Staff Members alike; Staff Members can be easily identified by the <code>is_staff</code> flag. Certain fields only apply to staff members and as such are always &lsquo;null&rsquo; to non-staff Contacts
 ie, ?isStaff=1 will only return staff. (Which are contacts with a staff table entry)</p>
 
 <h2 id="find-all-contacts">Find All Contacts</h2>
 
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.
-<code class="prettyprint">shell
-curl https://api.functionpoint.com/v1.1/contacts
-  -H &quot;Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;&quot;
-</code></p>
-
+<p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s2">"https://api.functionpoint.com/v1.1/contacts"</span> <span class="se">\</span>
+  --header <span class="s2">"Authorization: OAuth &lt;:YOUR_ACCESS_TOKEN&gt;"</span>
+</code></pre>
+<blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -826,108 +828,108 @@ curl https://api.functionpoint.com/v1.1/contacts
 <tr>
 <th>Field</th>
 <th>Type</th>
-<th>Description</th>
+<th>Description and sample values</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td>Unique identifier of a Contact used internally across the system</td>
 </tr>
 <tr>
 <td>first_name</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s given name</td>
 </tr>
 <tr>
 <td>last_name</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s surname</td>
 </tr>
 <tr>
 <td>salutation</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s salutation such as: <select><option>Mr.</option><option>Ms.</option><option>Miss</option><option>Dr.</option></select></td>
 </tr>
 <tr>
 <td>title</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Title held by the Contact within <a href="#companies">Company</a></td>
 </tr>
 <tr>
 <td>description</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Description or overview of the Contact</td>
 </tr>
 <tr>
 <td>home_phone</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s home phone number</td>
 </tr>
 <tr>
 <td>cell_phone</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s mobile phone number</td>
 </tr>
 <tr>
 <td>direct_phone</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s home phone number</td>
 </tr>
 <tr>
 <td>phone_extension</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>email</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s e-mail address</td>
 </tr>
 <tr>
 <td>mailing_list</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td><select><option>Y</option><option>N</option></select></td>
 </tr>
 <tr>
 <td>birthdate</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s birthday</td>
 </tr>
 <tr>
 <td>company_id</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td>Unique identifier of the Contact&rsquo;s <a href="#companies">Company</a></td>
 </tr>
 <tr>
 <td>company_name</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Name of the <a href="#companies">Company</a></td>
 </tr>
 <tr>
 <td>type_id</td>
-<td></td>
+<td>Integer</td>
 <td></td>
 </tr>
 <tr>
 <td>contact_type</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>status_id</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td><select><option>1</option><option>3</option></select></td>
 </tr>
 <tr>
 <td>contact_status</td>
-<td></td>
+<td>String</td>
 <td></td>
 </tr>
 <tr>
 <td>staff_status</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>The contact&rsquo;s status: <select><option>&ldquo;Active&rdquo;</option><option>&ldquo;Inactive&rdquo;</option></select></td>
 </tr>
 <tr>
 <td>staff_initial</td>
@@ -951,8 +953,9 @@ curl https://api.functionpoint.com/v1.1/contacts
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">YOUR_ACCESS_TOKEN</code> with your valid API token.</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl https://api.functionpoint.com/v1.1/contacts/914
-  -H <span class="s2">"Authorization: OAuth &lt;YOUR_ACCESS_TOKEN&gt;"</span>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s2">"https://api.functionpoint.com/v1.1/contacts/&lt;:COMPANY_ID&gt;"</span> <span class="se">\</span>
+  --header <span class="s2">"Authorization: OAuth &lt;:YOUR_ACCESS_TOKEN&gt;"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -1100,8 +1103,8 @@ curl https://api.functionpoint.com/v1.1/contacts
 </tr>
 <tr>
 <td>staff_status</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>The contact&rsquo;s status: <select><option>Active</option><option>Inactive</option></select></td>
 </tr>
 <tr>
 <td>staff_initial</td>
