@@ -405,92 +405,92 @@
 <tr>
 <td>ID</td>
 <td></td>
-<td></td>
+<td>Unique identifier of a Company used internally across the system</td>
 </tr>
 <tr>
 <td>name</td>
 <td></td>
-<td></td>
+<td>Company&rsquo;s name</td>
 </tr>
 <tr>
 <td>code</td>
 <td></td>
-<td></td>
+<td>Auto generated code based on the Company&rsquo;s name</td>
 </tr>
 <tr>
 <td>description</td>
 <td></td>
-<td></td>
+<td>Description or overview of the Company</td>
 </tr>
 <tr>
 <td>addressOne</td>
 <td></td>
-<td></td>
+<td>Line 1 or the Company&rsquo;s address</td>
 </tr>
 <tr>
 <td>addressTwo</td>
 <td></td>
-<td></td>
+<td>Line 2 of the Company&rsquo;s address</td>
 </tr>
 <tr>
 <td>city</td>
 <td></td>
-<td></td>
+<td>City where the Company is located</td>
 </tr>
 <tr>
 <td>provState</td>
 <td></td>
-<td></td>
+<td>Province/State where the Company is located</td>
 </tr>
 <tr>
 <td>country</td>
 <td></td>
-<td></td>
+<td>Country where the Company is located</td>
 </tr>
 <tr>
 <td>postalZip</td>
 <td></td>
-<td></td>
+<td>Postal/Zip code of the Company&rsquo;s address</td>
 </tr>
 <tr>
 <td>phone</td>
 <td></td>
-<td></td>
+<td>Company&rsquo;s phone number</td>
 </tr>
 <tr>
 <td>fax</td>
 <td></td>
-<td></td>
+<td>Company&rsquo;s fax number</td>
 </tr>
 <tr>
 <td>webURL</td>
 <td></td>
-<td></td>
+<td>Company&rsquo;s website address</td>
 </tr>
 <tr>
 <td>statusID</td>
 <td></td>
-<td></td>
+<td>Internal, numerical identifier for a Company&rsquo;s Status</td>
 </tr>
 <tr>
 <td>typeID</td>
 <td></td>
-<td></td>
+<td>Internal, numerical identifier for a Company&rsquo;s Type</td>
 </tr>
 <tr>
 <td>industryTypeID</td>
 <td></td>
-<td></td>
+<td>Internal, numerical identifier for a Company&rsquo;s Industry Type</td>
 </tr>
 <tr>
 <td>classificationID</td>
 <td></td>
-<td></td>
+<td>Internal, numerical identifier for a Company&rsquo;s Classification</td>
 </tr>
 <tr>
 <td>qualificationID</td>
 <td></td>
-<td></td>
+<td>Internal, numerical identifier for a Company&rsquo;s Qualification</td>
 </tr>
 <tr>
 <td>accountExecutiveID</td>
@@ -874,12 +874,12 @@ ie, ?isStaff=1 will only return staff. (Which are contacts with a staff table en
 <tr>
 <td>direct_phone</td>
 <td>String</td>
-<td>Contact&rsquo;s home phone number</td>
+<td>Contact&rsquo;s direct phone number</td>
 </tr>
 <tr>
 <td>phone_extension</td>
 <td>String</td>
-<td></td>
+<td>Contact&rsquo;s in-office phone extension</td>
 </tr>
 <tr>
 <td>email</td>
@@ -889,12 +889,12 @@ ie, ?isStaff=1 will only return staff. (Which are contacts with a staff table en
 <tr>
 <td>mailing_list</td>
 <td>String</td>
-<td><select><option>Y</option><option>N</option></select></td>
+<td>Flags the user as a member or not of the mailing list: <select><option>Y</option><option>N</option></select></td>
 </tr>
 <tr>
 <td>birthdate</td>
 <td>String</td>
-<td>Contact&rsquo;s birthday</td>
+<td>Contact&rsquo;s date of birth</td>
 </tr>
 <tr>
 <td>company_id</td>
@@ -904,47 +904,47 @@ ie, ?isStaff=1 will only return staff. (Which are contacts with a staff table en
 <tr>
 <td>company_name</td>
 <td>String</td>
-<td>Name of the <a href="#companies">Company</a></td>
+<td>Name of the <a href="#companies">Company</a> that the Contact is associated with</td>
 </tr>
 <tr>
 <td>type_id</td>
 <td>Integer</td>
-<td></td>
+<td>Simple identifier for a Contact&rsquo;s Type: <select><option>1</option><option>2</option><option>3</option><option>4</option><option>etc</option></select></td>
 </tr>
 <tr>
 <td>contact_type</td>
 <td>String</td>
-<td></td>
+<td>Contact&rsquo;s type as provided by <a href="#catalogs">List Maintenance</a>: <select><option>Prospect</option><option>Client</option><option>Manager</option><option>Staff</option><option>etc</option></select></td>
 </tr>
 <tr>
 <td>status_id</td>
 <td>Integer</td>
-<td><select><option>1</option><option>3</option></select></td>
+<td>Simple identifier for a Contact&rsquo;s Status: <select><option>1</option><option>3</option></select></td>
 </tr>
 <tr>
 <td>contact_status</td>
 <td>String</td>
-<td></td>
+<td>The contact&rsquo;s status: <select><option>Active</option><option>Inactive</option></select></td>
 </tr>
 <tr>
 <td>staff_status</td>
 <td>String</td>
-<td>The contact&rsquo;s status: <select><option>&ldquo;Active&rdquo;</option><option>&ldquo;Inactive&rdquo;</option></select></td>
+<td>The contact&rsquo;s status as a Staff member: <select><option>Active</option><option>Inactive</option></select></td>
 </tr>
 <tr>
 <td>staff_initial</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Initials used across the system if the Contact is a Staff member</td>
 </tr>
 <tr>
 <td>role_id</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td>Simple identifier for a Contact&rsquo;s Role: <select><option>1</option><option>2</option><option>3</option><option>4</option><option>etc</option></select></td>
 </tr>
 <tr>
 <td>is_staff</td>
-<td></td>
-<td></td>
+<td>Boolean</td>
+<td>Flags a Contact as a Staff member or not: <select><option>true</option><option>false</option></select></td>
 </tr>
 </tbody></table>
 
@@ -1003,123 +1003,123 @@ ie, ?isStaff=1 will only return staff. (Which are contacts with a staff table en
 <tr>
 <th>Field</th>
 <th>Type</th>
-<th>Description</th>
+<th>Description and sample values</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td>Unique identifier of a Contact used internally across the system</td>
 </tr>
 <tr>
 <td>first_name</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s given name</td>
 </tr>
 <tr>
 <td>last_name</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s surname</td>
 </tr>
 <tr>
 <td>salutation</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s salutation such as: <select><option>Mr.</option><option>Ms.</option><option>Miss</option><option>Dr.</option></select></td>
 </tr>
 <tr>
 <td>title</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Title held by the Contact within <a href="#companies">Company</a></td>
 </tr>
 <tr>
 <td>description</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Description or overview of the Contact</td>
 </tr>
 <tr>
 <td>home_phone</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s home phone number</td>
 </tr>
 <tr>
 <td>cell_phone</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s mobile phone number</td>
 </tr>
 <tr>
 <td>direct_phone</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s direct phone number</td>
 </tr>
 <tr>
 <td>phone_extension</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s in-office phone extension</td>
 </tr>
 <tr>
 <td>email</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s e-mail address</td>
 </tr>
 <tr>
 <td>mailing_list</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Flags the user as a member or not of the mailing list: <select><option>Y</option><option>N</option></select></td>
 </tr>
 <tr>
 <td>birthdate</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s date of birth</td>
 </tr>
 <tr>
 <td>company_id</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td>Unique identifier of the Contact&rsquo;s <a href="#companies">Company</a></td>
 </tr>
 <tr>
 <td>company_name</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Name of the <a href="#companies">Company</a> that the Contact is associated with</td>
 </tr>
 <tr>
 <td>type_id</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td>Simple identifier for a Contact&rsquo;s Type: <select><option>1</option><option>2</option><option>3</option><option>4</option><option>etc</option></select></td>
 </tr>
 <tr>
 <td>contact_type</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Contact&rsquo;s type as provided by <a href="#catalogs">List Maintenance</a>: <select><option>Prospect</option><option>Client</option><option>Manager</option><option>Staff</option><option>etc</option></select></td>
 </tr>
 <tr>
 <td>status_id</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td>Simple identifier for a Contact&rsquo;s Status: <select><option>1</option><option>3</option></select></td>
 </tr>
 <tr>
 <td>contact_status</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>staff_status</td>
 <td>String</td>
 <td>The contact&rsquo;s status: <select><option>Active</option><option>Inactive</option></select></td>
 </tr>
 <tr>
+<td>staff_status</td>
+<td>String</td>
+<td>The contact&rsquo;s status as a Staff member: <select><option>Active</option><option>Inactive</option></select></td>
+</tr>
+<tr>
 <td>staff_initial</td>
-<td></td>
-<td></td>
+<td>String</td>
+<td>Initials used across the system if the Contact is a Staff member</td>
 </tr>
 <tr>
 <td>role_id</td>
-<td></td>
-<td></td>
+<td>Integer</td>
+<td>Simple identifier for a Contact&rsquo;s Role: <select><option>1</option><option>2</option><option>3</option><option>4</option><option>etc</option></select></td>
 </tr>
 <tr>
 <td>is_staff</td>
-<td></td>
-<td></td>
+<td>Boolean</td>
+<td>Flags a Contact as a Staff member or not: <select><option>true</option><option>false</option></select></td>
 </tr>
 </tbody></table>
 
